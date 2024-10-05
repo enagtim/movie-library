@@ -1,9 +1,13 @@
-import './App.css'
-
+import Button from '../components/Button/Button';
+import Header from '../components/Header/Header';
+import Paragraph from '../components/Paragraph/Paragraph';
+import "./App.css";
 function App() {
   return (
     <>
-     <h1>Header</h1>
+    <Header/>
+    <Paragraph/>
+    <Button/>
     </>
   )
 }
