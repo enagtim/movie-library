@@ -1,9 +1,12 @@
 import './Button.css'
 
-function Button() {
+function Button({text}) {
+  const clickedButton = (event) => {
+    console.log(event);
+  }
   return (
     <>
-     <button className='button'>Искать</button>
+     <button onClick={clickedButton} className='button'>{text}</button>
     </>
   )
 }

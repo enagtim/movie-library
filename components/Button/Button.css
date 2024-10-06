@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
   background: var(--Primary-400);
   border-radius: 12px;
   border: 2px solid var(--Primary-400);

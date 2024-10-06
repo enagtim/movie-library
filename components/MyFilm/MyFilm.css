@@ -1,0 +1,14 @@
+.my_film {
+  color: var(--Grey-200);
+  display: flex;
+  padding: 12px 16px;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: var(--font-w-600);
+  line-height: 24px;
+  letter-spacing: 0.32px;
+}
+.my_film:hover {
+  color: var(--White-100);
+}

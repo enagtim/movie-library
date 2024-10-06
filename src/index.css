@@ -1,9 +1,13 @@
 :root {
   --background: #121829;
+  --background-input: rgba(0, 0, 0, 0.1);
   --Primary-400: #7b6ef6;
   --White-100: #fff;
   --Grey-50: #ebeef5;
   --Grey-300: #8e95a9;
+  --Grey-200: #a8aebf;
+  --Grey-700: #323b54;
+  --Grey-600: #475069;
 
   --font-w-400: 400;
   --font-w-600: 600;
@@ -14,14 +18,23 @@
   --margin-0: 0;
 }
 * {
+  box-sizing: border-box;
+}
+body {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: var(--font-w-400);
-}
-body {
   margin: var(--margin-0);
   background-color: var(--background);
 }
 h1 {
   margin: var(--margin-0);
+}
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+input {
+  border: none;
 }

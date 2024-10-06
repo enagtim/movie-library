@@ -1,14 +1,14 @@
-import Button from '../components/Button/Button';
-import Header from '../components/Header/Header';
-import Paragraph from '../components/Paragraph/Paragraph';
 import "./App.css";
+import Header from '../layouts/Header/Header';
+import TitleTextLayout from '../layouts/TitleTextLayout/TitleTextLayout';
+import FormLayoutSearch from "../layouts/FormLayoutSearch/FormLayoutSearch";
 function App() {
   return (
-    <>
-    <Header/>
-    <Paragraph/>
-    <Button/>
-    </>
+    <div className='app'>
+      <Header/>
+      <TitleTextLayout/>
+      <FormLayoutSearch/>
+    </div>
   )
 }
 
