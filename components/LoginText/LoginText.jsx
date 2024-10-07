@@ -1,11 +1,12 @@
-import './LoginText.css'
+import "./LoginText.css";
 
 function LoginText() {
   return (
-     <a href="#" className='login_text'>Войти
-        <img src="/Login.svg" alt="Иконка входа"/>
-      </a>
-  )
+    <a href="#" className="login_text">
+      Log in
+      <img src="/Login.svg" alt="Иконка входа" />
+    </a>
+  );
 }
 
 export default LoginText;

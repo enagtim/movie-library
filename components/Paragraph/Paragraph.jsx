@@ -1,11 +1,7 @@
-import './Paragraph.css'
+import "./Paragraph.css";
 
-function Paragraph() {
-  return (
-     <div className='paragraph'>
-        Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.
-     </div>
-  )
+function Paragraph({ text }) {
+  return <div className="paragraph"> {text}</div>;
 }
 
 export default Paragraph;

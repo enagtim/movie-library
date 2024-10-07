@@ -1,14 +1,18 @@
-import Paragraph from '../../components/Paragraph/Paragraph';
-import Title from '../../components/Title/Title';
-import './TitleTextLayout.css'
+import Paragraph from "../../components/Paragraph/Paragraph";
+import Title from "../../components/Title/Title";
+import "./TitleTextLayout.css";
 
 function TitleTextLayout() {
   return (
-     <div className='header_text'>
-        <Title/>
-        <Paragraph/>
-     </div>
-  )
+    <div className="header_text">
+      <Title title="Search" />
+      <Paragraph
+        text="Enter the name of a movie, 
+         cartoon or cartoon to search and add to
+         favorites."
+      />
+    </div>
+  );
 }
 
 export default TitleTextLayout;

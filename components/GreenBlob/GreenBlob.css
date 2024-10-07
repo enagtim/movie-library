@@ -1,0 +1,9 @@
+.green_blob {
+  width: 488px;
+  height: 345px;
+  background: var(--Secondary-800);
+  filter: blur(175px);
+  position: absolute;
+  top: 450px;
+  display: block;
+}

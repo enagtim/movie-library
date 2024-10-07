@@ -12,6 +12,7 @@
   border-color: var(--Primary-400);
 }
 .search_input {
+  font-family: "Poppins", sans-serif;
   cursor: pointer;
   padding: 12px 0;
   width: 100%;
