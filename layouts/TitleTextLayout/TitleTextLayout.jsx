@@ -8,7 +8,7 @@ function TitleTextLayout() {
       <Title title="Search" />
       <Paragraph
         text="Enter the name of a movie, 
-         cartoon or cartoon to search and add to
+         TV series or cartoon to search and add to
          favorites."
       />
     </div>

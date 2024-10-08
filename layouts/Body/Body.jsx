@@ -1,4 +1,4 @@
-import CardFilm from "../../components/CardFilm/CardFilm";
+import CardList from "../CardList/CardList";
 import FormLayoutSearch from "../FormLayoutSearch/FormLayoutSearch";
 import TitleTextLayout from "../TitleTextLayout/TitleTextLayout";
 import "./Body.css";
@@ -9,7 +9,7 @@ function Body() {
       <div className="content">
         <TitleTextLayout />
         <FormLayoutSearch />
-        <CardFilm />
+        <CardList />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ function CardFilm() {
   return (
     <div className="card_film">
       <RatingButton text="124" />
-      <Poster />
+      <Poster src="./public/BlackWidow.png" />
       <NameFilmLayout />
     </div>
   );

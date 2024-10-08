@@ -1,3 +1,4 @@
+import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
 import Navigation from "../Navigation/Navigation";
 import "./Header.css";
 
@@ -5,10 +6,9 @@ function Header() {
   return (
     <div className="header">
       <div className="wrapper">
-        <a href="#">
-          <img src="/Bookmark.svg" alt="Иконка избранное" />
-        </a>
+        <img className="bookmark" src="/Bookmark.svg" alt="Иконка избранное" />
         <Navigation />
+        <BurgerMenu />
       </div>
     </div>
   );
