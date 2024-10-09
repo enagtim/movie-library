@@ -53,14 +53,46 @@ const dataFilm = [
 function CardList() {
   return (
     <div className="card_list">
-      <CardFilm />
-      <CardFilm />
-      <CardFilm />
-      <CardFilm />
-      <CardFilm />
-      <CardFilm />
-      <CardFilm />
-      <CardFilm />
+      <CardFilm
+        name={dataFilm[0].title}
+        poster={dataFilm[0].poster}
+        rating={dataFilm[0].rating}
+      />
+      <CardFilm
+        name={dataFilm[1].title}
+        poster={dataFilm[1].poster}
+        rating={dataFilm[1].rating}
+      />
+      <CardFilm
+        name={dataFilm[2].title}
+        poster={dataFilm[2].poster}
+        rating={dataFilm[2].rating}
+      />
+      <CardFilm
+        name={dataFilm[3].title}
+        poster={dataFilm[3].poster}
+        rating={dataFilm[3].rating}
+      />
+      <CardFilm
+        name={dataFilm[4].title}
+        poster={dataFilm[4].poster}
+        rating={dataFilm[4].rating}
+      />
+      <CardFilm
+        name={dataFilm[5].title}
+        poster={dataFilm[5].poster}
+        rating={dataFilm[5].rating}
+      />
+      <CardFilm
+        name={dataFilm[6].title}
+        poster={dataFilm[6].poster}
+        rating={dataFilm[6].rating}
+      />
+      <CardFilm
+        name={dataFilm[7].title}
+        poster={dataFilm[7].poster}
+        rating={dataFilm[7].rating}
+      />
     </div>
   );
 }

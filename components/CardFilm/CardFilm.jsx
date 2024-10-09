@@ -3,12 +3,12 @@ import Poster from "../Poster/Poster";
 import RatingButton from "../RatingButton/RatingButton";
 import "./CardFilm.css";
 
-function CardFilm() {
+function CardFilm({ rating, poster, name }) {
   return (
     <div className="card_film">
-      <RatingButton text="124" />
-      <Poster src="./public/BlackWidow.png" />
-      <NameFilmLayout />
+      <RatingButton text={rating} />
+      <Poster src={poster} />
+      <NameFilmLayout name={name} />
     </div>
   );
 }

@@ -2,10 +2,10 @@ import InFavorites from "../../components/InFavorites/InFavorites";
 import NameFilm from "../../components/NameFilm/NameFilm";
 import "./NameFilmLayout.css";
 
-function NameFilmLayout() {
+function NameFilmLayout({ name }) {
   return (
     <div className="name_layout">
-      <NameFilm name="Black Widow" />
+      <NameFilm name={name} />
       <InFavorites text="Add to favourites" />
     </div>
   );
