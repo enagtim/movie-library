@@ -3,6 +3,7 @@
   display: flex;
   gap: 8px;
   margin-bottom: 80px;
+  align-items: flex-start;
 }
 @media (max-width: 610px) {
   .form {

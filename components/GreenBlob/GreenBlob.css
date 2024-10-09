@@ -1,9 +1,15 @@
 .green_blob {
+  background: var(--Success-800);
+  filter: blur(175px);
   width: 488px;
   height: 345px;
-  background: var(--Secondary-800);
-  filter: blur(175px);
+  top: 1270px;
+  left: 822px;
   position: absolute;
-  top: 450px;
-  display: block;
+  z-index: -1;
+}
+@media (max-width: 1400px) {
+  .green_blob {
+    display: none;
+  }
 }
