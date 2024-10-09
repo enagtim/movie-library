@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.css";
 import Header from "../layouts/Header/Header";
 import PurpleBlob from "../components/PurpleBlob/PurpleBlob";
 import BlueBlob from "../components/BlueBlob/BlueBlob";
@@ -7,7 +7,7 @@ import PurpleWhiteBlob from "../components/PurpleWhiteBlob/PurpleWhiteBlob";
 import GreenBlob from "../components/GreenBlob/GreenBlob";
 function App() {
   return (
-    <div className="app">
+    <div className={styles["app"]}>
       <PurpleBlob />
       <BlueBlob />
       <PurpleWhiteBlob />

@@ -1,5 +1,5 @@
 import CardFilm from "../../components/CardFilm/CardFilm";
-import "./CardList.css";
+import styles from "./CardList.module.css";
 const dataFilm = [
   {
     id: 1,
@@ -52,7 +52,7 @@ const dataFilm = [
 ];
 function CardList() {
   return (
-    <div className="card_list">
+    <div className={styles["card_list"]}>
       <CardFilm
         name={dataFilm[0].title}
         poster={dataFilm[0].poster}

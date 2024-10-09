@@ -1,4 +1,4 @@
-import "./FormLayoutSearch.css";
+import styles from "./FormLayoutSearch.module.css";
 import Button from "../../components/Button/Button";
 import InputSearch from "../../components/InputSearch/InputSearch";
 function FormLayoutSearch() {
@@ -10,7 +10,7 @@ function FormLayoutSearch() {
   };
   return (
     <>
-      <form className="form" onSubmit={formSumbit}>
+      <form className={styles["form"]} onSubmit={formSumbit}>
         <InputSearch />
         <Button text="Search" />
       </form>

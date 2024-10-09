@@ -1,7 +1,7 @@
-import "./BlueBlob.css";
+import styles from "./BlueBlob.module.css";
 
 function BlueBlob() {
-  return <div className="blue_blob"></div>;
+  return <div className={styles["blue_blob"]}></div>;
 }
 
 export default BlueBlob;

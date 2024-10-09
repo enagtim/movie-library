@@ -1,11 +1,11 @@
-import "./InputSearch.css";
+import styles from "./InputSearch.module.css";
 
 function InputSearch() {
   return (
-    <div className="wrapper_input">
-      <img className="search_icon" src="/Search.svg" alt="Иконка поиска" />
+    <div className={styles["wrapper_input"]}>
+      <img src="/Search.svg" alt="Иконка поиска" />
       <input
-        className="search_input"
+        className={styles["search_input"]}
         type="text"
         name="search_input"
         placeholder="Please enter film name"

@@ -1,12 +1,12 @@
 import CardList from "../CardList/CardList";
 import FormLayoutSearch from "../FormLayoutSearch/FormLayoutSearch";
 import TitleTextLayout from "../TitleTextLayout/TitleTextLayout";
-import "./Body.css";
+import styles from "./Body.module.css";
 
 function Body() {
   return (
-    <div className="body">
-      <div className="content">
+    <div className={styles["body"]}>
+      <div className={styles["content"]}>
         <TitleTextLayout />
         <FormLayoutSearch />
         <CardList />
