@@ -14,7 +14,7 @@ const Input = forwardRef(function Input(
         src="/Search.svg"
         alt="Иконка поиска"
       />
-      <input ref={ref} className={styles["search_input"]} {...props} />
+      <input ref={ref} className={styles["input"]} {...props} />
       <img
         className={className(styles["icon_right"], {
           [styles["icon_none"]]: IconRight,
