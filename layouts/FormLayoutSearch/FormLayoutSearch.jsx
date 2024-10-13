@@ -1,6 +1,6 @@
 import styles from "./FormLayoutSearch.module.css";
 import Button from "../../components/Button/Button";
-import InputSearch from "../../components/InputSearch/InputSearch";
+import Input from "../../components/Input/Input";
 function FormLayoutSearch() {
   const formSumbit = (event) => {
     event.preventDefault();
@@ -11,7 +11,14 @@ function FormLayoutSearch() {
   return (
     <>
       <form className={styles["form"]} onSubmit={formSumbit}>
-        <InputSearch />
+        <Input
+          IconLeft={false}
+          IconRight={true}
+          type="text"
+          name="search_input"
+          placeholder="Please enter film name"
+          autoComplete="off"
+        />
         <Button text="Search" />
       </form>
     </>

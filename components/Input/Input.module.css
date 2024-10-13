@@ -11,6 +11,9 @@
 .wrapper_input:focus-within {
   border-color: var(--Primary-400);
 }
+.icon_none {
+  display: none;
+}
 .search_input {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
