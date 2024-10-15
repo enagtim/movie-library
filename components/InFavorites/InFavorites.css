@@ -1,0 +1,15 @@
+.in_favorite {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  cursor: pointer;
+}
+.text {
+  color: var(--Primary-400);
+  font-size: 16px;
+  font-weight: var(--font-w-600);
+  line-height: 24px;
+  letter-spacing: 0.32px;
+  width: 100%;
+}

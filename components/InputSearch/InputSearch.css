@@ -1,0 +1,28 @@
+.wrapper_input {
+  width: 100%;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--Grey-700);
+  background: var(--background-input);
+}
+.wrapper_input:focus-within {
+  border-color: var(--Primary-400);
+}
+.search_input {
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  padding: 12px 0;
+  width: 100%;
+  background: none;
+  color: var(--White-100);
+  outline: none;
+  font-size: 14px;
+  line-height: 16px;
+  border: none;
+}
+.search_input::placeholder {
+  color: var(--Grey-600);
+}
