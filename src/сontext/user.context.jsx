@@ -31,8 +31,6 @@ export const UserContextProvider = ({ children }) => {
     } else {
       data.push({ name, isLogin: true });
     }
-
-    setProfiles(data);
     localStorage.setItem("profiles", JSON.stringify(data));
     setUserName(name);
     setIsLogin(true);
@@ -47,7 +45,6 @@ export const UserContextProvider = ({ children }) => {
       return profile;
     });
     localStorage.setItem("profiles", JSON.stringify(updateProfile));
-    setUserName("");
     setIsLogin(false);
   };
   return (
