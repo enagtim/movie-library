@@ -1,0 +1,16 @@
+.log_out {
+  color: var(--Grey-200);
+  display: flex;
+  padding: 12px 32px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: var(--font-w-600);
+  line-height: 24px;
+  letter-spacing: 0.32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.log_out:hover {
+  color: var(--White-100);
+}
