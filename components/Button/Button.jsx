@@ -1,16 +1,6 @@
-import "./Button.css";
+import styles from "./Button.module.css";
 
 function Button({ text }) {
-  const clickedButton = (event) => {
-    console.log(event);
-  };
-  return (
-    <>
-      <button onClick={clickedButton} className="button">
-        {text}
-      </button>
-    </>
-  );
+  return <button className={styles["button"]}>{text}</button>;
 }
-
 export default Button;

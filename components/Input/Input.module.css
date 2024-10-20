@@ -11,7 +11,10 @@
 .wrapper_input:focus-within {
   border-color: var(--Primary-400);
 }
-.search_input {
+.icon_none {
+  display: none;
+}
+.input {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
   padding: 12px 0;
@@ -23,6 +26,6 @@
   line-height: 16px;
   border: none;
 }
-.search_input::placeholder {
+.input::placeholder {
   color: var(--Grey-600);
 }

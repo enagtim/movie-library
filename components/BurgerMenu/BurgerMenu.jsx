@@ -1,9 +1,9 @@
-import "./BurgerMenu.css";
+import styles from "./BurgerMenu.module.css";
 
 function BurgerMenu() {
   return (
-    <button className="burger">
-      <div className="burger__wrapper">
+    <button className={styles["burger"]}>
+      <div className={styles["burger__wrapper"]}>
         <div></div>
         <div></div>
         <div></div>

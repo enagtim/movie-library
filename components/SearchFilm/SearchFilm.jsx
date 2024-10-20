@@ -1,8 +1,8 @@
-import "./SearchFilm.css";
+import styles from "./SearchFilm.module.css";
 
 function SearchFilm() {
   return (
-    <a href="#" className="search_film">
+    <a href="#" className={styles["search_film"]}>
       Seacrh film
     </a>
   );

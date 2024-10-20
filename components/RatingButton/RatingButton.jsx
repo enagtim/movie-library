@@ -1,10 +1,10 @@
-import "./RatingButton.css";
+import styles from "./RatingButton.module.css";
 
 function RatingButton({ text }) {
   return (
-    <button className="rating-button">
+    <button className={styles["rating-button"]}>
       <img src="/star.svg" alt="Иконка рейтинга" />
-      <div className="raiting-button__text">{text}</div>
+      <div className={styles["raiting-button__text"]}>{text}</div>
     </button>
   );
 }

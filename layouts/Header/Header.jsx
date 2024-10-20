@@ -1,12 +1,16 @@
 import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
 import Navigation from "../Navigation/Navigation";
-import "./Header.css";
+import styles from "./Header.module.css";
 
 function Header() {
   return (
-    <div className="header">
-      <div className="wrapper">
-        <img className="bookmark" src="/Bookmark.svg" alt="Иконка избранное" />
+    <div className={styles["header"]}>
+      <div className={styles["wrapper"]}>
+        <img
+          className={styles["bookmark"]}
+          src="/Bookmark.svg"
+          alt="Иконка избранное"
+        />
         <Navigation />
         <BurgerMenu />
       </div>

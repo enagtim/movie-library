@@ -3,12 +3,12 @@
   display: flex;
   gap: 8px;
   margin-bottom: 80px;
-  align-items: flex-start;
 }
 @media (max-width: 610px) {
   .form {
     flex-direction: column;
     gap: 16px;
     margin-bottom: 40px;
+    align-items: flex-start;
   }
 }
