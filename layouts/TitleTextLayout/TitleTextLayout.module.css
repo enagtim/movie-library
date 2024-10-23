@@ -1,0 +1,8 @@
+.header_text {
+  max-width: 588px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}

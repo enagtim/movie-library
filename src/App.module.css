@@ -1,0 +1,9 @@
+.app {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 1400px) {
+  .app {
+    overflow: hidden;
+  }
+}

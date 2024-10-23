@@ -1,0 +1,8 @@
+.form {
+  max-width: 385px;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  margin-bottom: 80px;
+  align-items: flex-start;
+}
