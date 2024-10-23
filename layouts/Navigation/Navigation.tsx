@@ -2,8 +2,8 @@ import LoginText from "../../components/LoginText/LoginText";
 import MyFilm from "../../components/MyFilm/MyFilm";
 import SearchFilm from "../../components/SearchFilm/SearchFilm";
 import styles from "./Navigation.module.css";
-import UserName from "..//../components/UserName/UserName";
-import LogoutButton from "..//../components/LogoutButton/LogoutButton";
+import UserName from "../../components/UserName/UserName";
+import LogoutButton from "../../components/LogoutButton/LogoutButton";
 import { UserContext } from "../../src/сontext/user.context";
 import { useContext } from "react";
 
