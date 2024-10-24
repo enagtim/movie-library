@@ -1,6 +1,6 @@
 import styles from "./Paragraph.module.css";
-
-function Paragraph({ text }) {
+import ParagraphProps from './Paragraph.props';
+function Paragraph({ text }: ParagraphProps) {
   return <div className={styles["paragraph"]}> {text}</div>;
 }
 

@@ -1,4 +1,10 @@
-export const dataFilms = [
+interface Film {
+   id: number,
+   title: string, 
+   rating: number, 
+   poster: string
+}
+export const dataFilms: Film[] = [
   {
     id: 1,
     title: "Black Widow",

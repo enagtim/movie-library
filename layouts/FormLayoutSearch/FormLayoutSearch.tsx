@@ -2,15 +2,9 @@ import styles from "./FormLayoutSearch.module.css";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 function FormLayoutSearch() {
-  const formSumbit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const formProps = Object.fromEntries(formData);
-    console.log(formProps);
-  };
   return (
     <>
-      <form className={styles["form"]} onSubmit={formSumbit}>
+      <form className={styles["form"]}>
         <Input
           IconLeft={false}
           IconRight={true}

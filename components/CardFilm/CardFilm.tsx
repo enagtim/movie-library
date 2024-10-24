@@ -2,13 +2,14 @@ import NameFilmLayout from "../../layouts/NameFilmLayout/NameFilmLayout";
 import Poster from "../Poster/Poster";
 import RatingButton from "../RatingButton/RatingButton";
 import styles from "./CardFilm.module.css";
+import CardFilmProps from './CardFilm.props';
 
-function CardFilm({ rating, poster, name }) {
+function CardFilm({ rating, poster, name }: CardFilmProps) {
   return (
     <div className={styles["card_film"]}>
-      <RatingButton text={rating} />
+      <RatingButton numberRating={rating} />
       <Poster src={poster} />
-      <NameFilmLayout name={name} />
+      <NameFilmLayout title={name} />
     </div>
   );
 }

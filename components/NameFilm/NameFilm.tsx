@@ -1,6 +1,7 @@
 import styles from "./NameFilm.module.css";
+import NameFilmProps from './NameFilm.props';
 
-function NameFilm({ name }) {
+function NameFilm({ name }: NameFilmProps) {
   return <div className={styles["name_film"]}>{name}</div>;
 }
 

@@ -1,7 +1,8 @@
 import styles from "./Input.module.css";
-import className from "classname";
+import className from 'classnames';
 import { forwardRef } from "react";
-const Input = forwardRef(function Input(
+import InputProps from './Input.props';
+const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   { IconLeft, IconRight, ...props },
   ref
 ) {

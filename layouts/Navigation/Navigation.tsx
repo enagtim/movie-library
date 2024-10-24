@@ -6,9 +6,14 @@ import UserName from "../../components/UserName/UserName";
 import LogoutButton from "../../components/LogoutButton/LogoutButton";
 import { UserContext } from "../../src/сontext/user.context";
 import { useContext } from "react";
+import { UserContextValue } from "../../src/сontext/user.context.props";
 
 function Navigation() {
-  const { username, isLogin, logout } = useContext(UserContext);
+  const context = useContext(UserContext);
+  if(!context){
+    throw new Error("UserContext must be used within a UserContextProvider");
+  }
+  const { username, isLogin, logout } = context as UserContextValue;
   return (
     <nav className={styles["navigation"]}>
       {isLogin ? (

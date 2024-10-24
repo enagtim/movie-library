@@ -1,15 +1,17 @@
 import { createContext } from "react";
 import { useState, useEffect } from "react";
+import { UserContextProps, ProfileProps, UserContextValue } from './user.context.props';
 
-export const UserContext = createContext();
+export const UserContext = createContext<UserContextValue | null>(null);
 
-export const UserContextProvider = ({ children }) => {
-  const [username, setUserName] = useState("");
-  const [isLogin, setIsLogin] = useState(false);
-  const [profiles, setProfiles] = useState([]);
+export const UserContextProvider = ({ children }: UserContextProps) => {
+  const [username, setUserName] = useState<string>("");
+  const [isLogin, setIsLogin] = useState<boolean>(false);
+  const [profiles, setProfiles] = useState<ProfileProps[]>([]);
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("profiles"));
+    const getlocalstorageData = localStorage.getItem("profiles");
+    const data: ProfileProps[] | null = getlocalstorageData ? JSON.parse(getlocalstorageData) : null
     if (Array.isArray(data)) {
       setProfiles(data);
       const loggedUser = data.find((profile) => profile.isLogin);
@@ -22,8 +24,9 @@ export const UserContextProvider = ({ children }) => {
     }
   }, []);
 
-  const login = (name) => {
-    const data = JSON.parse(localStorage.getItem("profiles")) || [];
+  const login = (name: string) => {
+    const getlocalstorageData = localStorage.getItem("profiles") || "[]";
+    const data: ProfileProps[] = JSON.parse(getlocalstorageData);
     const existingProfile = data.find((profile) => profile.name === name);
 
     if (existingProfile) {
@@ -37,7 +40,8 @@ export const UserContextProvider = ({ children }) => {
   };
 
   const logout = () => {
-    const data = JSON.parse(localStorage.getItem("profiles")) || [];
+    const getlocalstorageData = localStorage.getItem("profiles") || "[]";
+    const data: ProfileProps[] = JSON.parse(getlocalstorageData);
     const updateProfile = data.map((profile) => {
       if (profile.name === username) {
         return { ...profile, isLogin: false };
@@ -49,9 +53,7 @@ export const UserContextProvider = ({ children }) => {
   };
   return (
     <UserContext.Provider
-      value={{ profiles, username, isLogin, login, logout }}
-    >
-      {children}
+      value={{ profiles, username, isLogin, login, logout }}>{children}
     </UserContext.Provider>
   );
 };
