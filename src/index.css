@@ -26,9 +26,6 @@
 * {
   box-sizing: border-box;
 }
-html {
-  height: 2000px;
-}
 body {
   font-family: "Poppins", sans-serif;
   font-style: normal;

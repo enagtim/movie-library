@@ -5,11 +5,9 @@ import styles from "./TitleTextLayout.module.css";
 function TitleTextLayout() {
   return (
     <div className={styles["header_text"]}>
-      <Title title="Search" />
+      <Title title="Поиск" />
       <Paragraph
-        text="Enter the name of a movie, 
-         TV series or cartoon to search and add to
-         favorites."
+        text="Введите название фильма, сериала или мультфильма для поиска и добавления в избранное."
       />
     </div>
   );

@@ -3,7 +3,7 @@ import LogoutProps from './Logout.props';
 function LogoutButton({ onClick }: LogoutProps) {
   return (
     <button onClick={onClick} className={styles["log_out"]}>
-      Log out
+      Выйти
     </button>
   );
 }

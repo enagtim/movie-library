@@ -25,7 +25,7 @@ function LoginForm() {
   };
   return (
     <form className={styles["form"]} onSubmit={formSubmit}>
-      <Title title="Log in" />
+      <Title title="Войти" />
       <Input
         IconLeft={true}
         IconRight={true}
@@ -33,10 +33,10 @@ function LoginForm() {
         name="name"
         value={inputValue}
         onChange={changeInput}
-        placeholder="Enter your name"
+        placeholder="Ваше имя"
         autoComplete="off"
       />
-      <Button onClick={() => login(inputValue)} text="Log in profile" />
+      <Button onClick={() => login(inputValue)} text="Войти в профиль" />
     </form>
   );
 }

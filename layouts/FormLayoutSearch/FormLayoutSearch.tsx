@@ -10,10 +10,10 @@ function FormLayoutSearch() {
           IconRight={true}
           type="text"
           name="search_input"
-          placeholder="Please enter film name"
+          placeholder="Введите название"
           autoComplete="off"
         />
-        <Button text="Search" />
+        <Button text="Искать" />
       </form>
     </>
   );
