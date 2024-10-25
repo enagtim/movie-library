@@ -1,7 +1,6 @@
-import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import Navigation from "../Navigation/Navigation";
 import styles from "./Header.module.css";
-
 function Header() {
   return (
     <div className={styles["header"]}>

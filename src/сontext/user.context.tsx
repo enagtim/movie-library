@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { UserContextProps, ProfileProps, UserContextValue } from './user.context.props';
 
 export const UserContext = createContext<UserContextValue | null>(null);
-
 export const UserContextProvider = ({ children }: UserContextProps) => {
   const [username, setUserName] = useState<string>("");
   const [isLogin, setIsLogin] = useState<boolean>(false);

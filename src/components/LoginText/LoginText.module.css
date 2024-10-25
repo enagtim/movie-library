@@ -12,3 +12,6 @@
 .login_text:hover {
   color: var(--White-100);
 }
+.active {
+  color: var(--White-100);
+}

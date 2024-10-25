@@ -4,9 +4,9 @@ import SearchFilm from "../../components/SearchFilm/SearchFilm";
 import styles from "./Navigation.module.css";
 import UserName from "../../components/UserName/UserName";
 import LogoutButton from "../../components/LogoutButton/LogoutButton";
-import { UserContext } from "../../src/сontext/user.context";
+import { UserContext } from "../../сontext/user.context";
 import { useContext } from "react";
-import { UserContextValue } from "../../src/сontext/user.context.props";
+import { UserContextValue } from "../../сontext/user.context.props";
 
 function Navigation() {
   const context = useContext(UserContext);

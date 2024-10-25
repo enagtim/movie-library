@@ -2,10 +2,9 @@ import Title from "../../components/Title/Title";
 import styles from "./LoginForm.module.css";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
-import { UserContext } from "../../src/сontext/user.context";
+import { UserContext } from "../../сontext/user.context";
 import { ChangeEvent, FormEvent, useContext, useState } from "react";
-import { UserContextValue } from "../../src/сontext/user.context.props";
-
+import { UserContextValue } from "../../сontext/user.context.props";
 function LoginForm() {
   const context = useContext(UserContext);
   if(!context){

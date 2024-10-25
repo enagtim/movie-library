@@ -1,4 +1,4 @@
-import NameFilmLayout from "../../layouts/NameFilmLayout/NameFilmLayout";
+import NameFilmLayout from "../NameFilmLayout/NameFilmLayout";
 import Poster from "../Poster/Poster";
 import RatingButton from "../RatingButton/RatingButton";
 import styles from "./CardFilm.module.css";

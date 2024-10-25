@@ -10,3 +10,6 @@
 .search_film:hover {
   color: var(--White-100);
 }
+.active {
+   color: var(--White-100);
+}
