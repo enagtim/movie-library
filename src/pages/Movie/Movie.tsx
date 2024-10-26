@@ -1,6 +1,6 @@
 function Movie () {
-    return (
-        <>Movie</>
-    )
+	return (
+		<>Movie</>
+	);
 }
 export default Movie;

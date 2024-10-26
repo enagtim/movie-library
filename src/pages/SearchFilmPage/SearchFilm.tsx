@@ -1,16 +1,14 @@
-import CardList from "../../components/CardList/CardList";
-import FormLayoutSearch from "../../components/FormLayoutSearch/FormLayoutSearch";
-import TitleTextLayout from "../../components/TitleTextLayout/TitleTextLayout";
-import styles from "./SearchFilmPage.module.css";
-
+import CardList from '../../components/CardList/CardList';
+import FormLayoutSearch from '../../components/FormLayoutSearch/FormLayoutSearch';
+import TitleTextLayout from '../../components/TitleTextLayout/TitleTextLayout';
 function SearchFilmPage () {
-    return (
-        <div className={styles['content']}>
-            <TitleTextLayout/>
-            <FormLayoutSearch/>
-            <CardList/>
-        </div>
-    )
+	return (
+		<>
+			<TitleTextLayout/>
+			<FormLayoutSearch/>
+			<CardList/>
+		</>
+	);
 }
 
 export default SearchFilmPage;

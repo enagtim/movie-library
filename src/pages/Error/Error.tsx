@@ -1,6 +1,6 @@
 function  Error () {
-    return (
-        <>Error</>
-    )
+	return (
+		<>Error</>
+	);
 }
 export default Error;

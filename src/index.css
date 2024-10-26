@@ -32,7 +32,15 @@ body {
   font-weight: var(--font-w-400);
   margin: var(--margin-0);
   background-color: var(--background);
+  background-image: url('./public/Background.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
   min-width: 375px;
+}
+@media (max-width: 800px)  {
+  body {
+    background-image: none;
+  }
 }
 h1 {
   margin: var(--margin-0);

@@ -1,6 +1,6 @@
 function  Favorites () {
-    return (
-        <>Favorites</>
-    )
+	return (
+		<>Favorites</>
+	);
 }
 export default Favorites;
