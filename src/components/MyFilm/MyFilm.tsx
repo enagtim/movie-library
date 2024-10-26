@@ -1,11 +1,13 @@
+import { NavLink } from 'react-router-dom';
 import styles from './MyFilm.module.css';
-
+import cn from 'classnames';
 function MyFilm() {
 	return (
-		<a href="#" className={styles['my_film']}>
-      Мои фильмы
+		<NavLink to='/favorites' className={({isActive}) => cn(styles['my_film'], {
+			[styles.active]: isActive
+		})}>Мои фильмы
 			<img src="/Ellipse.svg" alt="Икона фильмов" />
-		</a>
+		</NavLink>
 	);
 }
 export default MyFilm;

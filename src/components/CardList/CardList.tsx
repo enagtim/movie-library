@@ -9,7 +9,7 @@ function CardList() {
 			{filmData.map((film) => {
 				return (
 					<CardFilm
-						key={film.id}
+						id={film.id}
 						name={film.title}
 						poster={film.poster}
 						rating={film.rating}
