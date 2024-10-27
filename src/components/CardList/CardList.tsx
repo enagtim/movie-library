@@ -1,7 +1,6 @@
 import CardFilm from '../../components/CardFilm/CardFilm';
 import styles from './CardList.module.css';
 import { dataFilms } from './cardData';
-
 function CardList() {
 	const filmData = dataFilms;
 	return (
@@ -9,6 +8,7 @@ function CardList() {
 			{filmData.map((film) => {
 				return (
 					<CardFilm
+						key={film.id}
 						id={film.id}
 						name={film.title}
 						poster={film.poster}
