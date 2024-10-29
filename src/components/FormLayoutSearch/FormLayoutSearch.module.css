@@ -2,6 +2,7 @@
   max-width: 511px;
   display: flex;
   gap: 8px;
+  margin-bottom: 80px;
 }
 @media (max-width: 610px) {
   .form {

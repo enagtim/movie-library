@@ -1,18 +1,17 @@
 import CardFilm from '../../components/CardFilm/CardFilm';
 import styles from './CardList.module.css';
-import { dataFilms } from './cardData';
-function CardList() {
-	const filmData = dataFilms;
+import { CardListProps } from './CardList.props';
+function CardList({ films }: CardListProps) {
 	return (
 		<div className={styles['card_list']}>
-			{filmData.map((film) => {
+			{films.map((f) => {
 				return (
 					<CardFilm
-						key={film.id}
-						id={film.id}
-						name={film.title}
-						poster={film.poster}
-						rating={film.rating}
+						key={f.id}
+						id={f.id}
+						name={f.name}
+						poster={f.poster}
+						rating={f.rating}
 					/>
 				);
 			})}
