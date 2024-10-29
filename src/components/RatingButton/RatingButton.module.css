@@ -1,0 +1,17 @@
+.rating {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  border-radius: 8px;
+  background: var(--Black-65);
+  backdrop-filter: blur(4px);
+  padding: 4px 8px;
+}
+.raiting__text {
+  color: var(--Warning-500);
+  font-size: 16px;
+  line-height: 24px;
+}
