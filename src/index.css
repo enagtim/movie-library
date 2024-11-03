@@ -1,12 +1,15 @@
 :root {
   --background: #121829;
   --background-input: rgba(0, 0, 0, 0.1);
+  --Primary-200: #BEB7FB;
   --Primary-400: #7b6ef6;
   --Primary-800: #251e62;
   --Secondary-800: #0c4265;
   --White-100: #fff;
   --Grey-50: #ebeef5;
+  --Grey-100: #C3C8D4;
   --Grey-300: #8e95a9;
+  --Grey-400: #767E94;
   --Grey-200: #a8aebf;
   --Grey-700: #323b54;
   --Grey-600: #475069;
@@ -19,7 +22,9 @@
   --font-w-600: 600;
 
   --font-s-64: 64px;
+  --font-s-20: 20px;
   --font-s-16: 16px;
+  --font-s-12: 12px;
 
   --margin-0: 0;
 }

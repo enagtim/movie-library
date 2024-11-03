@@ -1,6 +1,6 @@
-import styles from './RatingButton.module.css';
-import RatingProps from './RatingButton.props';
-function RatingButton({numberRating}: RatingProps) {
+import styles from './Rating.module.css';
+import RatingProps from './Rating.props';
+function Rating({ numberRating }: RatingProps) {
 	return (
 		<div className={styles['rating']}>
 			<img src="/star.svg" alt="Иконка рейтинга" />
@@ -9,4 +9,4 @@ function RatingButton({numberRating}: RatingProps) {
 	);
 }
 
-export default RatingButton;
+export default Rating;

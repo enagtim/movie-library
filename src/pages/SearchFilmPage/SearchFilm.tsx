@@ -12,19 +12,22 @@ export type InputForm = {
 		value: string
 	}
 };
-const options = {
-	method: 'GET',
-	headers: { accept: 'application/json', 'X-API-KEY': 'XYNPWWX-0VZ4EF2-HS2W1FV-JNA4H0J' }
-};
 function SearchFilmPage() {
 
 	const [films, setFilms] = useState<CardFilmProps[]>([]);
 	const [findedFilm, setFindedFilm] = useState<boolean | null>(null);
 
+	const options = {
+		method: 'GET',
+		headers: { accept: 'application/json', 'X-API-KEY': 'XYNPWWX-0VZ4EF2-HS2W1FV-JNA4H0J' }
+	};
 	const page: number = 1;
 	const limit: number = 8;
 
 	const getListFilm = async (query: string) => {
+		if (query.length === 0) {
+			return;
+		}
 		try {
 			const { data } = await axios.get<FilmsResponse>('https://api.kinopoisk.dev/v1.4/movie/search', {
 				...options,
@@ -34,7 +37,6 @@ function SearchFilmPage() {
 					query
 				}
 			});
-			// потом сделать более подробно, чтобы нельзя было отправлять запросы без фильма
 			if (data.docs.length === 0) {
 				setFindedFilm(false);
 			} else {
@@ -43,8 +45,8 @@ function SearchFilmPage() {
 				setFindedFilm(true);
 			}
 		} catch (e) {
-			console.error(e);
 			setFindedFilm(false);
+			return e;
 		}
 	};
 	const submit = async (event: FormEvent) => {

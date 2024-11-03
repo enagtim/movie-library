@@ -1,11 +1,10 @@
 import styles from './InFavorites.module.css';
-import InFavorite from './InFavorites.props';
 
-function InFavorites({ text } : InFavorite) {
+function InFavorites() {
 	return (
 		<div className={styles['in_favorite']}>
 			<img src="/like.svg" alt="Иконка лайка" />
-			<div className={styles['text']}>{text}</div>
+			<div className={styles['text']}>В избранное</div>
 		</div>
 	);
 }
