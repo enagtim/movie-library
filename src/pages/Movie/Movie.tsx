@@ -28,7 +28,7 @@ function Movie() {
 				setReview(reviewResponse.data.docs);
 			}
 			catch (e) {
-				console.error(e);
+				return e;
 			} finally {
 				setIsLoading(false);
 			}
