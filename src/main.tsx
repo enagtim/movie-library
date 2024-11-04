@@ -8,39 +8,37 @@ import Favorites from './pages/Favorites/Favorites';
 import Error from './pages/Error/Error';
 import SearchFilmPage from './pages/SearchFilmPage/SearchFilm';
 import HeaderMenu from './layouts/HeaderMenu/HeaderMenu';
+import { RequireAuth } from './helpers/RequireAuth';
 const router = createBrowserRouter([
 	{
-		path: '/', 
-		element: <HeaderMenu/>, 
+		path: '/',
+		element: <HeaderMenu />,
 		children: [
 			{
 				path: '/',
-				element: <SearchFilmPage/>
-			}, 
+				element: <RequireAuth><SearchFilmPage /></RequireAuth>
+			},
 			{
-				path: '/login', 
-				element: <Login/>
-			}, 
+				path: '/login',
+				element: <Login />
+			},
 			{
 				path: '/movie/:id',
-				element: <Movie/>
+				element: <RequireAuth><Movie /></RequireAuth>
 			},
 			{
 				path: '/favorites',
-				element: <Favorites/>
+				element: <RequireAuth><Favorites /></RequireAuth>
 			}
 		]
-	}, 
+	},
 	{
-		path: '*', 
-		element: <Error/>
+		path: '*',
+		element: <Error />
 	}
 ]);
-
-
-
-const rootElement = document.getElementById('root'); 
-if(rootElement){
+const rootElement = document.getElementById('root');
+if (rootElement) {
 	createRoot(rootElement).render(
 		<StrictMode>
 			<RouterProvider router={router} />

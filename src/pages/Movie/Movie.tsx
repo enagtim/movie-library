@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { MovieProps } from './Movie.props';
 import axios from 'axios';
 import InFavorites from '../../components/InFavorites/InFavorites';
-import { ReviewCardProps } from '../../components/ReviewCard/ReviewCard.props';
+import { ReviewCardProps, ReviewResponse } from '../../components/ReviewCard/ReviewCard.props';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
 
 function Movie() {
@@ -22,10 +22,10 @@ function Movie() {
 			try {
 				const [filmResponse, reviewResponse] = await Promise.all([
 					axios.get<MovieProps>(`https://api.kinopoisk.dev/v1.4/movie/${id}`, options),
-					axios.get<ReviewCardProps[]>(`https://api.kinopoisk.dev/v1.4/review?page=1&limit=1&movieId=${id}`, options)
+					axios.get<ReviewResponse>(`https://api.kinopoisk.dev/v1.4/review?page=1&limit=1&movieId=${id}`, options)
 				]);
 				setFilmDetails(filmResponse.data);
-				setReview(reviewResponse.data);
+				setReview(reviewResponse.data.docs);
 			}
 			catch (e) {
 				console.error(e);
@@ -39,7 +39,7 @@ function Movie() {
 	const premiereWorldDate = filmDetails && filmDetails.premiere.world ?
 		new Date(filmDetails.premiere.world) : null;
 	if (isLoading) {
-		return <div>Загрузка...</div>;
+		return <div className={styles.loader} >Загрузка...</div>;
 	}
 	return (
 		<>
@@ -86,16 +86,16 @@ function Movie() {
 						<div className={styles.tag__title}>Отзывы</div>
 						{review ? (
 							review.map((review) => (
-								<ReviewCard key={review.id} id={review.id} title={review.title} review={review.review} createdAt={review.createdAt} />
+								<ReviewCard key={review.id} id={review.id} title={review.title ? review.title : 'Рецензия'} review={review.review ? review.review : 'Описание фильма отсуствует'} createdAt={review.createdAt ? review.createdAt : 'Дата отзыва не указана'} />
 							))
 						) : (
-							<div>Нет отзывов</div>
+							<div className={styles.review_unFind}>Нет отзывов</div>
 						)}
 					</div>
 				</div >
 
 			) : (
-				<div>Ничего</div>
+				<div className={styles.filmDetails_unFind}>Подробная информация о фильме отсутствует</div>
 			)
 			}
 		</>

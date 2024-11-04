@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 80px;
+    margin-bottom: 80px;
 }
 .content__header{
     display: flex;
@@ -54,6 +55,9 @@
     gap: 4px;
     padding: 4px 8px;
     align-items: center;
+    border-radius: 8px;
+    background: var(--Black-65);
+    backdrop-filter: blur(4px);
 }
 .rating__count {
     color: var(--Warning-500);
@@ -74,4 +78,21 @@
     color: var(--Grey-100);
     font-size: var(--font-s-20);
     line-height: 32px;
+}
+.content__footer{
+   display: flex;
+   flex-direction: column;
+   gap: 14px;
+}
+.loader {
+    color: var(--Grey-100);
+    font-size: var(--font-s-20);
+}
+.review_unFind {
+    color: var(--Grey-100);
+    font-size: var(--font-s-20);
+}
+.filmDetails_unFind {
+    color: var(--Grey-100);
+    font-size: var(--font-s-20);
 }
