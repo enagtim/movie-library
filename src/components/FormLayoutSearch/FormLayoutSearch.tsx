@@ -1,10 +1,11 @@
 import styles from './FormLayoutSearch.module.css';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
-function FormLayoutSearch() {
+import { SubmitEvent } from './FormLayout.props';
+function FormLayoutSearch({ onSubmit }: SubmitEvent) {
 	return (
 		<>
-			<form className={styles['form']}>
+			<form className={styles['form']} onSubmit={onSubmit}>
 				<Input
 					IconLeft={false}
 					IconRight={true}

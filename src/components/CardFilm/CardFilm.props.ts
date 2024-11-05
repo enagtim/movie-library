@@ -1,7 +1,14 @@
-interface CardFilmProps {
-    rating: number, 
-    poster: string, 
+export interface CardFilmProps {
+    id: number,
     name: string,
-    id: number 
+    rating: {
+        imdb: number;
+    }, 
+    poster: {
+        url: string;
+    }, 
 }
-export default CardFilmProps;
+
+export interface FilmsResponse {
+    docs: CardFilmProps[];
+}
