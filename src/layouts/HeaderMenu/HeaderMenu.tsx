@@ -2,12 +2,12 @@ import { Outlet } from 'react-router-dom';
 import { UserContextProvider } from '..//../сontext/user.context';
 import Header from '../../components/Header/Header';
 import styles from './HeaderMenu.module.css';
-function HeaderMenu () {
+function HeaderMenu() {
 	return (
 		<UserContextProvider>
-			<Header/>
+			<Header />
 			<div className={styles['body']}>
-				<Outlet/>
+				<Outlet />
 			</div>
 		</UserContextProvider>
 	);

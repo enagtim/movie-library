@@ -1,11 +1,7 @@
 import styles from './Input.module.css';
 import className from 'classnames';
-import { forwardRef } from 'react';
 import InputProps from './Input.props';
-const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-	{ IconLeft, IconRight, ...props },
-	ref
-) {
+function Input({ IconLeft, IconRight, ...props }: InputProps) {
 	return (
 		<div className={styles['wrapper_input']}>
 			<img
@@ -15,7 +11,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 				src="/Search.svg"
 				alt="Иконка поиска"
 			/>
-			<input ref={ref} className={styles['input']} {...props} />
+			<input className={styles['input']} {...props} />
 			<img
 				className={className(styles['icon_right'], {
 					[styles['icon_none']]: IconRight
@@ -25,6 +21,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 			/>
 		</div>
 	);
-});
+};
 
 export default Input;

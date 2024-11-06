@@ -5,10 +5,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Movie from './pages/Movie/Movie';
 import Favorites from './pages/Favorites/Favorites';
-import Error from './pages/Error/Error';
 import SearchFilmPage from './pages/SearchFilmPage/SearchFilm';
 import HeaderMenu from './layouts/HeaderMenu/HeaderMenu';
 import { RequireAuth } from './helpers/RequireAuth';
+import ErrorPage from './pages/Error/ErrorPage';
 const router = createBrowserRouter([
 	{
 		path: '/',
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: '*',
-		element: <Error />
+		element: <ErrorPage />
 	}
 ]);
 const rootElement = document.getElementById('root');

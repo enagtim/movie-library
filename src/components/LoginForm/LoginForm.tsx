@@ -3,24 +3,24 @@ import styles from './LoginForm.module.css';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import { UserContext } from '../../сontext/user.context';
-import { ChangeEvent, FormEvent, useContext, useState } from 'react';
+import { FormEvent, useContext } from 'react';
 import { UserContextValue } from '../../сontext/user.context.props';
+
 function LoginForm() {
 	const context = useContext(UserContext);
-	if(!context){
+	if (!context) {
 		throw new Error('UserContext must be used within a UserContextProvider');
 	}
 	const { login } = context as UserContextValue;
-	const [inputValue, setInputValue] = useState<string>('');
 
-	const changeInput = (event: ChangeEvent<HTMLInputElement>) => {
-		setInputValue(event.target.value);
-	};
-
-	const formSubmit = (event: FormEvent<HTMLFormElement>) => {
+	const formSubmit = (event: FormEvent) => {
 		event.preventDefault();
-		login(inputValue);
-		setInputValue('');
+		const target = event.target as typeof event.target & { loginInput: { value: string } };
+		const { loginInput } = target;
+		if (loginInput.value.length === 0) {
+			return;
+		}
+		login(loginInput.value);
 	};
 	return (
 		<form className={styles['form']} onSubmit={formSubmit}>
@@ -29,13 +29,11 @@ function LoginForm() {
 				IconLeft={true}
 				IconRight={true}
 				type="text"
-				name="name"
-				value={inputValue}
-				onChange={changeInput}
+				name="loginInput"
 				placeholder="Ваше имя"
 				autoComplete="off"
 			/>
-			<Button onClick={() => login(inputValue)} text="Войти в профиль" />
+			<Button text="Войти в профиль" />
 		</form>
 	);
 }

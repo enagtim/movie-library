@@ -1,12 +1,14 @@
 import { createContext } from 'react';
 import { useState, useEffect } from 'react';
 import { UserContextProps, ProfileProps, UserContextValue } from './user.context.props';
+import { useNavigate } from 'react-router-dom';
 
 export const UserContext = createContext<UserContextValue | null>(null);
 export const UserContextProvider = ({ children }: UserContextProps) => {
   const [username, setUserName] = useState<string>('');
   const [isLogin, setIsLogin] = useState<boolean>(false);
   const [profiles, setProfiles] = useState<ProfileProps[]>([]);
+  const navigate = useNavigate();
   useEffect(() => {
     const getlocalstorageData = localStorage.getItem('profiles');
     const data: ProfileProps[] | null = getlocalstorageData ? JSON.parse(getlocalstorageData) : null;
@@ -35,6 +37,7 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
     localStorage.setItem('profiles', JSON.stringify(data));
     setUserName(name);
     setIsLogin(true);
+    navigate('/');
   };
   const logout = () => {
     const getlocalstorageData = localStorage.getItem('profiles') || '[]';
@@ -47,6 +50,7 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
     });
     localStorage.setItem('profiles', JSON.stringify(updateProfile));
     setIsLogin(false);
+    navigate('/login');
   };
   return (
     <UserContext.Provider
