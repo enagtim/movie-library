@@ -9,6 +9,11 @@ import SearchFilmPage from './pages/SearchFilmPage/SearchFilm';
 import HeaderMenu from './layouts/HeaderMenu/HeaderMenu';
 import { RequireAuth } from './helpers/RequireAuth';
 import ErrorPage from './pages/Error/ErrorPage';
+import { Provider } from 'react-redux';
+import store from './store/store';
+
+
+
 const router = createBrowserRouter([
 	{
 		path: '/',
@@ -41,7 +46,9 @@ const rootElement = document.getElementById('root');
 if (rootElement) {
 	createRoot(rootElement).render(
 		<StrictMode>
-			<RouterProvider router={router} />
+			<Provider store={store}>
+				<RouterProvider router={router} />
+			</Provider>
 		</StrictMode>
 	);
 }

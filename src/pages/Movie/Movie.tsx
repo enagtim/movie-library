@@ -3,15 +3,24 @@ import styles from './Movie.module.css';
 import { useEffect, useState } from 'react';
 import { MovieProps } from './Movie.props';
 import axios from 'axios';
-import InFavorites from '../../components/InFavorites/InFavorites';
 import { ReviewCardProps, ReviewResponse } from '../../components/ReviewCard/ReviewCard.props';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+import { CardFilmProps } from '../../components/CardFilm/CardFilm.props';
+import { removeFavorite, addToFavorite } from '../../store/favorites.slice';
+import cn from 'classnames';
 
 function Movie() {
 	const { id } = useParams();
 	const [review, setReview] = useState<ReviewCardProps[] | null>(null);
 	const [filmDetails, setFilmDetails] = useState<MovieProps | null>(null);
 	const [isLoading, setIsLoading] = useState<boolean>(true);
+
+	const dispatch = useDispatch();
+	const favorites = useSelector((state: RootState) => state.favorites.favorites);
+	const isFavorite = favorites.some((movie) => movie.id === Number(id));
 
 	const options = {
 		method: 'GET',
@@ -41,6 +50,13 @@ function Movie() {
 	if (isLoading) {
 		return <div className={styles.loader} >Загрузка...</div>;
 	}
+	const handleFavoriteClick = () => {
+		if (isFavorite) {
+			dispatch(removeFavorite(filmDetails as CardFilmProps));
+		} else {
+			dispatch(addToFavorite(filmDetails as CardFilmProps));
+		}
+	};
 	return (
 		<>
 			{filmDetails ? (
@@ -58,7 +74,17 @@ function Movie() {
 									<img src="/star.svg" alt="Иконка рейтинга" />
 									<div className={styles.rating__count}>{filmDetails.rating.imdb}</div>
 								</div>
-								<InFavorites />
+								<button onClick={handleFavoriteClick} className={styles.in_favorite}>
+									<img
+										src={isFavorite ? '/BookmarkCard.svg' : '/like.svg'}
+										alt="Иконка избранного" />
+									<div
+										className={cn(styles.text, {
+											[styles.active]: isFavorite
+										})}>
+										{isFavorite ? 'В избранном' : 'В избранное'}
+									</div>
+								</button>
 							</div>
 							<div className={styles.tag_film}>
 								<div className={styles.tag__title}>Тип</div>

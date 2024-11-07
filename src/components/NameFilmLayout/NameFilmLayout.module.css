@@ -1,8 +1,0 @@
-.name_layout {
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
-}

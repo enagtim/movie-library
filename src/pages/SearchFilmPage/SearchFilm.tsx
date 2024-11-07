@@ -7,11 +7,6 @@ import axios from 'axios';
 import NotFindTextLayout from '../../components/NotFindText/NotFindText';
 import styles from './SearchFilm.module.css';
 
-export type InputForm = {
-	search_input: {
-		value: string
-	}
-};
 function SearchFilmPage() {
 
 	const [films, setFilms] = useState<CardFilmProps[]>([]);
@@ -51,7 +46,7 @@ function SearchFilmPage() {
 	};
 	const submit = async (event: FormEvent) => {
 		event.preventDefault();
-		const target = event.target as typeof event.target & InputForm;
+		const target = event.target as typeof event.target & { search_input: { value: string } };
 		const { search_input } = target;
 		setFindedFilm(null);
 		getListFilm(search_input.value);

@@ -2,6 +2,9 @@ import { createContext } from 'react';
 import { useState, useEffect } from 'react';
 import { UserContextProps, ProfileProps, UserContextValue } from './user.context.props';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../store/store';
+import { resetFavorite } from '../store/favorites.slice';
 
 export const UserContext = createContext<UserContextValue | null>(null);
 export const UserContextProvider = ({ children }: UserContextProps) => {
@@ -9,6 +12,7 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
   const [profiles, setProfiles] = useState<ProfileProps[]>([]);
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
     const getlocalstorageData = localStorage.getItem('profiles');
     const data: ProfileProps[] | null = getlocalstorageData ? JSON.parse(getlocalstorageData) : null;
@@ -50,6 +54,7 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
     });
     localStorage.setItem('profiles', JSON.stringify(updateProfile));
     setIsLogin(false);
+    dispatch(resetFavorite());
     navigate('/login');
   };
   return (
