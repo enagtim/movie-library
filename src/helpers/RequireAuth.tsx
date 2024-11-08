@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
-import { ProfileProps } from '../сontext/user.context.props';
+import { ProfileProps } from '../store/user.slice';
 
 
 export const RequireAuth = ({ children }: { children: ReactNode }) => {

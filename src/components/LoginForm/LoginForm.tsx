@@ -2,17 +2,15 @@ import Title from '../../components/Title/Title';
 import styles from './LoginForm.module.css';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
-import { UserContext } from '../../сontext/user.context';
-import { FormEvent, useContext } from 'react';
-import { UserContextValue } from '../../сontext/user.context.props';
+import { FormEvent } from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from '..//../store/user.slice';
+import { AppDispatch } from '../../store/store';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
-	const context = useContext(UserContext);
-	if (!context) {
-		throw new Error('UserContext must be used within a UserContextProvider');
-	}
-	const { login } = context as UserContextValue;
-
+	const navigate = useNavigate();
+	const dispatch = useDispatch<AppDispatch>();
 	const formSubmit = (event: FormEvent) => {
 		event.preventDefault();
 		const target = event.target as typeof event.target & { loginInput: { value: string } };
@@ -20,7 +18,8 @@ function LoginForm() {
 		if (loginInput.value.length === 0) {
 			return;
 		}
-		login(loginInput.value);
+		dispatch(login(loginInput.value));
+		navigate('/');
 	};
 	return (
 		<form className={styles['form']} onSubmit={formSubmit}>

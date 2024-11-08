@@ -11,9 +11,6 @@ import { RequireAuth } from './helpers/RequireAuth';
 import ErrorPage from './pages/Error/ErrorPage';
 import { Provider } from 'react-redux';
 import store from './store/store';
-
-
-
 const router = createBrowserRouter([
 	{
 		path: '/',

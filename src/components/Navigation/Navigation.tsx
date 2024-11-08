@@ -4,24 +4,32 @@ import SearchFilm from '../../components/SearchFilm/SearchFilm';
 import styles from './Navigation.module.css';
 import UserName from '../../components/UserName/UserName';
 import LogoutButton from '../../components/LogoutButton/LogoutButton';
-import { UserContext } from '../../сontext/user.context';
-import { useContext } from 'react';
-import { UserContextValue } from '../../сontext/user.context.props';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../store/store';
+import { logout } from '..//../store/user.slice';
+import { useNavigate } from 'react-router-dom';
+import { resetFavorite } from '..//../store/favorites.slice';
 
 function Navigation() {
-	const context = useContext(UserContext);
-	if(!context){
-		throw new Error('UserContext must be used within a UserContextProvider');
-	}
-	const { username, isLogin, logout } = context as UserContextValue;
+
+	const navigate = useNavigate();
+	const dispatch = useDispatch<AppDispatch>();
+	const handleLogout = (event: React.MouseEvent<HTMLButtonElement>) => {
+		event.preventDefault();
+		dispatch(logout());
+		dispatch(resetFavorite());
+		navigate('/login');
+	};
+	const { username, isLogin } = useSelector((state: RootState) => state.profiles);
 	return (
 		<nav className={styles['navigation']}>
 			{isLogin ? (
 				<>
 					<SearchFilm />
 					<MyFilm />
-					<UserName username={username} />
-					<LogoutButton onClick={logout} />
+					<UserName username={username ?? ''} />
+					<LogoutButton onClick={handleLogout} />
 				</>
 			) : (
 				<>
