@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { CardFilmProps } from '../components/CardFilm/CardFilm.props';
+import { CardFilmProps } from '../shared/ui/CardFilm/CardFilm.props';
 
 interface FavoritesState {
     favorites: CardFilmProps[];

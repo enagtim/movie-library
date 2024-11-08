@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import styles from './Favorites.module.css';
 import { RootState } from '../../store/store';
-import CardFilm from '../../components/CardFilm/CardFilm';
+import CardFilm from '../../shared/ui/CardFilm/CardFilm';
 function Favorites() {
 	const favorites = useSelector((state: RootState) => state.favorites.favorites);
 	return (

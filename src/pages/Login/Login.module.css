@@ -1,0 +1,26 @@
+.form {
+  max-width: 385px;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  align-items: flex-start;
+}
+.title {
+  color: var(--Grey-50);
+  font-size: var(--font-s-64);
+  font-weight: var(--font-w-600);
+  line-height: 80px;
+  letter-spacing: -1.28px;
+}
+@media (max-width: 610px) {
+  .form {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+  }
+    .title {
+    font-size: 48px;
+  }
+}
+

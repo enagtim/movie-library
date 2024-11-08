@@ -3,12 +3,12 @@ import styles from './Movie.module.css';
 import { useEffect, useState } from 'react';
 import { MovieProps } from './Movie.props';
 import axios from 'axios';
-import { ReviewCardProps, ReviewResponse } from '../../components/ReviewCard/ReviewCard.props';
-import ReviewCard from '../../components/ReviewCard/ReviewCard';
+import { ReviewCardProps, ReviewResponse } from '../../shared/ui/ReviewCard/ReviewCard.props';
+import ReviewCard from '../../shared/ui/ReviewCard/ReviewCard';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
-import { CardFilmProps } from '../../components/CardFilm/CardFilm.props';
+import { CardFilmProps } from '../../shared/ui/CardFilm/CardFilm.props';
 import { removeFavorite, addToFavorite } from '../../store/favorites.slice';
 import cn from 'classnames';
 
