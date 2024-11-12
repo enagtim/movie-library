@@ -1,17 +1,11 @@
 import { FormEvent, useState } from 'react';
-import CardList from '../../components/CardList/CardList';
-import FormLayoutSearch from '../../components/FormLayoutSearch/FormLayoutSearch';
-import TitleTextLayout from '../../components/TitleTextLayout/TitleTextLayout';
-import { CardFilmProps, FilmsResponse } from '../../components/CardFilm/CardFilm.props';
+import CardList from '../../shared/ui/CardList/CardList';
+import { CardFilmProps, FilmsResponse } from '../../shared/ui/CardFilm/CardFilm.props';
 import axios from 'axios';
-import NotFindTextLayout from '../../components/NotFindText/NotFindText';
 import styles from './SearchFilm.module.css';
+import Input from '../../shared/ui/Input/Input';
+import Button from '../../shared/ui/Button/Button';
 
-export type InputForm = {
-	search_input: {
-		value: string
-	}
-};
 function SearchFilmPage() {
 
 	const [films, setFilms] = useState<CardFilmProps[]>([]);
@@ -51,20 +45,34 @@ function SearchFilmPage() {
 	};
 	const submit = async (event: FormEvent) => {
 		event.preventDefault();
-		const target = event.target as typeof event.target & InputForm;
+		const target = event.target as typeof event.target & { search_input: { value: string } };
 		const { search_input } = target;
 		setFindedFilm(null);
 		getListFilm(search_input.value);
 	};
 	return (
 		<>
-			<>
-				<TitleTextLayout />
-				<FormLayoutSearch onSubmit={submit} />
-			</>
+			<div className={styles.header_text}>
+				<h1 className={styles.title}>Поиск</h1>
+				<p className={styles.paragraph}>Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.</p>
+			</div>
+			<form className={styles.form} onSubmit={submit}>
+				<Input
+					IconLeft={false}
+					IconRight={true}
+					type="text"
+					name="search_input"
+					placeholder="Введите название"
+					autoComplete="off"
+				/>
+				<Button content='Искать' />
+			</form>
 			{findedFilm === false ? (
 				<div className={styles.content}>
-					<NotFindTextLayout />
+					<div className={styles.wrapper}>
+						<div className={styles.header} >Упс... Ничего не найдено</div>
+						<div className={styles.text}>Попробуйте изменить запрос или ввести более точное название фильма</div>
+					</div>
 				</div>
 			) : (
 				<CardList films={films} />

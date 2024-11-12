@@ -1,14 +1,15 @@
 import { ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
 
+
 export const RequireAuth = ({ children }: { children: ReactNode }) => {
     const profiles = localStorage.getItem('profiles');
-    const data = profiles ? JSON.parse(profiles) : null;
+    const data = profiles ? JSON.parse(profiles) : [];
 
-    const isAuthorized = data.length > 0 && data[0].isLogin;
-
-    if (!isAuthorized) {
-        return <Navigate replace to={'/login'} />;
+    for (const profile of data) {
+        if (profile.isLogin) {
+            return children;
+        };
     };
-    return children;
+    return <Navigate replace to={'/login'} />;
 };

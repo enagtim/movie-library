@@ -1,0 +1,74 @@
+.card_film {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 12px;
+  background: rgba(32, 40, 62, 0.8);
+  backdrop-filter: blur(40px);
+  padding: 8px 8px 16px 8px;
+  width: 100%;
+}
+.name_layout {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+.name_film {
+  color: var(--Grey-50);
+  font-size: 16px;
+  font-weight: var(--font-w-600);
+  line-height: 24px;
+  letter-spacing: 0.32px;
+  white-space: nowrap; 
+  overflow: hidden;    
+  text-overflow: ellipsis;
+  max-width: 250px;  
+}
+.in_favorite {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.text {
+  color: var(--Primary-400);
+  font-size: 16px;
+  font-weight: var(--font-w-600);
+  line-height: 16px;
+  letter-spacing: 0.32px;
+  width: 100%;
+}
+.poster {
+    height: 400px;
+    width: 100%;
+    border-radius: 8px;
+}
+.rating {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  border-radius: 8px;
+  background: var(--Black-65);
+  backdrop-filter: blur(4px);
+  padding: 4px 8px;
+}
+.raiting__text {
+  color: var(--Warning-500);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.active{
+  color: #37D8A7;
+}
+

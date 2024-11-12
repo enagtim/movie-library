@@ -2,6 +2,7 @@ interface Genres {
     name: string
 }
 export interface MovieProps {
+    id: number
     name : string;
     description: string;
     movieLength: number; 
