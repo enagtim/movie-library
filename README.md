@@ -21,54 +21,56 @@ Movie-library — это React-приложение для поиска и до�
 3. **Запуск сервера**
     ```bach
     npm run dev
-4. **Структура проекта**    
+4. **Структура проекта**
+
+```plaintext
 movie-library/
 ├── public/
 ├── src/
 │   ├── app/
 │   │   ├── index.css
 │   │   ├── main.tsx
-|   ├── helpers/
+│   ├── helpers/
 │   │   ├── RequireAuth.tsx
 │   ├── pages/
 │   │   ├── Error/
-|   |       ├── ErrorPage.module.css
-│   │       ├── ErrorPage.tsx
+│   │   │   ├── ErrorPage.module.css
+│   │   │   ├── ErrorPage.tsx
 │   │   ├── Favorites/
-|   |       ├── Favorites.module.css
-│   │       ├── Favorites.tsx
+│   │   │   ├── Favorites.module.css
+│   │   │   ├── Favorites.tsx
 │   │   ├── Login/
-|   |       ├── Login.module.css
-│   │       ├── Login.tsx
+│   │   │   ├── Login.module.css
+│   │   │   ├── Login.tsx
 │   │   ├── Movie/
-|   |       ├── Movie.module.css
-|   |       ├── Movie.props.ts
-│   │       ├── Movie.tsx
+│   │   │   ├── Movie.module.css
+│   │   │   ├── Movie.props.ts
+│   │   │   ├── Movie.tsx
 │   │   ├── SearchFilm/
-|   |       ├── SearchFilm.module.css
-│   │       ├── SearchFilm.tsx
+│   │   │   ├── SearchFilm.module.css
+│   │   │   ├── SearchFilm.tsx
 │   ├── shared/
-|   |         ├── ui/
-|   |           ├── Button
-│   │           ├── CardFilm
-│   │           ├── CardList
-│   │           ├── Header
-│   │           ├── Input
-│   │           ├── Navigation
-│   │           ├── ReviewCard    
+│   │   ├── ui/
+│   │   │   ├── Button
+│   │   │   ├── CardFilm
+│   │   │   ├── CardList
+│   │   │   ├── Header
+│   │   │   ├── Input
+│   │   │   ├── Navigation
+│   │   │   ├── ReviewCard    
 │   ├── store/
-|   |      ├── favorite.slice.ts
-│   │      ├── user.slice.ts
-|   |      ├── store.ts
+│   │   ├── favorite.slice.ts
+│   │   ├── user.slice.ts
+│   │   ├── store.ts
 │   ├── widget/
-|        ├── HeaderMenu.module.css
-|        ├── HeaderMenu.tsx
+│   │   ├── HeaderMenu.module.css
+│   │   ├── HeaderMenu.tsx
 ├── .gitignore
 ├── eslint.config.js
 ├── README.md
-└── package-lock.json
-└── package.json
-└── tsconfig.json
-└── tsconfig.node.json
-└── types.d.ts
-└── vite.config.ts                 
+├── package-lock.json
+├── package.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── types.d.ts
+└── vite.config.ts
