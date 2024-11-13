@@ -6,7 +6,7 @@ import Login from '../pages/Login/Login';
 import Movie from '../pages/Movie/Movie';
 import Favorites from '../pages/Favorites/Favorites';
 import SearchFilmPage from '../pages/SearchFilmPage/SearchFilm';
-import HeaderMenu from '../layouts/HeaderMenu/HeaderMenu';
+import HeaderMenu from '../widget/HeaderMenu/HeaderMenu';
 import { RequireAuth } from '../helpers/RequireAuth';
 import ErrorPage from '../pages/Error/ErrorPage';
 import { Provider } from 'react-redux';
