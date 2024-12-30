@@ -60,7 +60,7 @@ function Movie() {
 	return (
 		<>
 			{filmDetails ? (
-				<div className={styles.сontent}>
+				<div className={styles.wrapper}>
 					<div className={styles.content__header}>
 						<div className={styles.title}>Поиск фильмов</div>
 						<h3 className={styles.film_name}>{filmDetails.name}</h3>
@@ -110,9 +110,15 @@ function Movie() {
 					</div>
 					<div className={styles.content__footer}>
 						<div className={styles.tag__title}>Отзывы</div>
-						{review ? (
+						{review && review.length > 0 ? (
 							review.map((review) => (
-								<ReviewCard key={review.id} id={review.id} title={review.title ? review.title : 'Рецензия'} review={review.review ? review.review : 'Описание фильма отсуствует'} createdAt={review.createdAt ? review.createdAt : 'Дата отзыва не указана'} />
+								<ReviewCard 
+								key={review.id} 
+								id={review.id} 
+								title={review.title ? review.title : 'Рецензия'} 
+								review={review.review ? review.review : 'Описание фильма отсуствует'} 
+								createdAt={review.createdAt ? review.createdAt : 'Дата отзыва не указана'} 
+								/>
 							))
 						) : (
 							<div className={styles.review_unFind}>Нет отзывов</div>
